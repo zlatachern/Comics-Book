@@ -1,0 +1,13 @@
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;500;700&display=swap');
+
+.nav__link {
+  font-family: 'Lora', sans-serif;
+  color: $color--white;
+  text-decoration: none;
+}
+
+.button--primary__text {
+  font-family: 'Lora', sans-serif;
+  color: $color--white;
+}
