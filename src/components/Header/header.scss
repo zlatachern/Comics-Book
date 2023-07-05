@@ -1,0 +1,24 @@
+.header {
+  background-color: black;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 120px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.box--button {
+  display: flex;
+  align-items: center;
+}
