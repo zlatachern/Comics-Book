@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .header {
   background-color: black;
   &__content {
@@ -11,10 +13,38 @@
   }
 }
 
-.nav {
-  &__list {
-    display: flex;
-    gap: 30px;
+.nav__list {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+.nav__item {
+  position: relative;
+  padding-bottom: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: $color--primary;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:first-child::after {
+    width: 45%; 
+    transition: width 0.3s ease; 
+  }
+
+  &:first-child:hover::after {
+    width: 100%; 
   }
 }
 
