@@ -1,26 +1,5 @@
 @use '../../styles/variables' as *;
 
-.header {
-  background-color: black;
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__logo {
-    max-width: 120px;
-  }
-}
-
-@media (max-width: 540px) {
-  .header {
-    &__content {
-      justify-content: right;
-    }
-  }
-}
-
 .nav__list {
   display: flex;
   gap: 30px;
@@ -57,24 +36,8 @@
 }
 
 @media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-
-  .header__logo {
-    max-width: 100px;
-    max-height: 50px;
+  .nav__list {
+    display: flex;
+    flex-direction: column;
   }
 }
-
-.box--button {
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 540px) {
-  .button {
-    display: none;
-  }
-}
-

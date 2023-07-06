@@ -10,4 +10,11 @@
 .button--primary__text {
   font-family: 'Lora', sans-serif;
   color: $color--white;
+  font-size: 18px;
+}
+
+@media (max-width: 540px) {
+  .button--primary__text {
+    font-size: 14px;
+  }
 }

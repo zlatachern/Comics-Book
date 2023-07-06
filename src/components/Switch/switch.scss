@@ -614,3 +614,9 @@
 .slider:checked + .switch .moons .star.star-5 {
   top: 53px;
 }
+
+@media (max-width: 540px) {
+  .switch {
+    --toggle-size: 0.4;
+  }
+}
