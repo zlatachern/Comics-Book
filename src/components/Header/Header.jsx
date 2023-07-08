@@ -1,15 +1,14 @@
 import './header.scss';
 import Container from '../Container/Container';
-import Button from '../Button/Button';
 import Switch from '../Switch/Switch';
 import Burger from '../Burger/Burger';
 import List from '../List/List';
-
+import FormButton from '../FormButton/FormButton'
 
 const Header = ({ children }) => (
   <header className='header page-wrap'>
     <Container>
-      <div className='header__content'>
+      <div className='header__content d-flex align-items-center justify-content-between'>
 
         <div className="header__nav">
           <Burger />
@@ -25,14 +24,12 @@ const Header = ({ children }) => (
         </svg>
         </div>
 
-        <div className="box--button">
+        <div className="box--button d-flex align-items-center">
           <div className="switch--button">
             <Switch />
           </div>
 
-          <div className="button">
-            <Button title={'Sing In'} />
-          </div>
+          <FormButton />
         </div>
         {children}
       </div>

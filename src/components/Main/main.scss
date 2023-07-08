@@ -1,0 +1,141 @@
+@use '../../styles/variables' as *;
+
+.main {
+  background-color: $color--back;
+}
+
+@media (max-width: 768px) {
+  .main {
+    position: relative;
+    top: 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .text-box__one {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .text-box__two {
+    flex-direction: column-reverse;
+    margin-top: 100px;
+  }
+}
+
+.text--ligthing {
+  z-index: 1;
+  position: relative;
+}
+
+.z {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+  top: -70px;
+}
+
+.lg {
+  position: absolute;
+  transform: skewX(-50deg) rotate(-40deg) translate(-78%, -82%);
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+}
+
+.lightning-border{
+  background: #d4c6cb;  
+  width: 42px;
+  height: 130px; 
+  left: 50.5%;
+
+  &::before {
+    top: -140px;
+    left: -24px;
+    border-bottom: 172px solid #d4c6cb;
+    border-left: 38px solid transparent;
+    border-right: 16px solid transparent;
+  }
+
+  &::after {
+    top: 88px;
+    left: 14px;
+    border-top: 172px solid #d4c6cb;
+    border-left: 16px solid transparent;
+    border-right: 38px solid transparent;
+  }
+}
+
+.lightning{
+  background: #fbe028;
+  width: 25px;
+  height: 120px;
+
+  &::before {
+    top: -130px;
+    left: -20px;
+    border-bottom: 150px solid #fbe028;
+    border-left: 30px solid transparent;
+    border-right: 10px solid transparent;
+  }
+
+  &::after {
+    top: 90px;
+    left: 15px;
+    border-top: 150px solid #fbe028;
+    border-left: 10px solid transparent;
+    border-right: 30px solid transparent;
+  }
+}
+
+.box--photos {
+  &__one {
+    width: 500px;
+
+    &__size {
+      width: 80px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.box--photos {
+  &__one {
+    &__size--small {
+      width: 60px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.box--photos {
+  &__two {
+    width: 400px;
+    margin: 0 auto;
+    &__size--small {
+      width: 60px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+

@@ -67,9 +67,10 @@
     top: 0;
   }
 
-  .nav__list {
+  .nav__list--burger {
     display: flex;
     flex-direction: column;
+    gap: 30px;
   }
 
 }

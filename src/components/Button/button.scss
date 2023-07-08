@@ -2,7 +2,7 @@
 
 .button--primary {
   font-size: 1rem;
-  padding: 0 50px;
+  padding: 5px 50px;
   background-color: $color--primary;
   border: 3px solid $color--primary;
   border-radius: 1em;
@@ -33,6 +33,6 @@
 
 @media (max-width: 540px) {
   .button--primary {
-    padding: 0 10px;
+    padding: 5px 20px;
   }
 }

@@ -2,14 +2,17 @@
 
 .header {
   background-color: black;
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
+  // position: fixed;
+  width: 100%;
+  z-index: 2;
   &__logo {
     max-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
   }
 }
 
@@ -67,10 +70,6 @@
   }
 }
 
-.box--button {
-  display: flex;
-  align-items: center;
-}
 
 @media (max-width: 540px) {
   .button {
