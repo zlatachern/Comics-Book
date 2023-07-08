@@ -8,7 +8,7 @@ import FormButton from '../FormButton/FormButton'
 const Header = ({ children }) => (
   <header className='header page-wrap'>
     <Container>
-      <div className='header__content d-flex align-items-center justify-content-between'>
+      <div className='header__content d-flex align-items-center'>
 
         <div className="header__nav">
           <Burger />

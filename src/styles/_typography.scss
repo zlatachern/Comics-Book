@@ -56,6 +56,20 @@
 @media (max-width: 768px) {
   .heading--h1 {
     font-size: 140px;
+
+    &__two {
+      font-size: 140px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .heading--h1 {
+    font-size: 80px;
+
+    &__two {
+      font-size: 80px;
+    }
   }
 }
 

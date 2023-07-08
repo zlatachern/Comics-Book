@@ -38,6 +38,15 @@
   top: -70px;
 }
 
+@media (max-width: 540px) {
+  .z {
+    width: 80px;
+    height: 80px;
+    top: 50px;
+    left: 70px;
+  }
+}
+
 .lg {
   position: absolute;
   transform: skewX(-50deg) rotate(-40deg) translate(-78%, -82%);
@@ -132,6 +141,30 @@
 
       img {
         max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .box--photos {
+    margin-top: 30px;
+    &__one {
+      width: 350px;
+      &__size {
+        width: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .box--photos {
+    margin-top: 30px;
+    &__two  {
+      width: 350px;
+      &__size {
+        width: 50px;
       }
     }
   }
