@@ -170,5 +170,66 @@
   }
 }
 
+.section--second {
+  margin-top: 90px;
+  position: relative;
+  background-image: url('../../images/img_main/back.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__img--back {
+    position: absolute;
+    max-width: 450px;
+    min-width: 250px;
+    top: 28%;
+    left: -60px;
+  }
+
+  &__img--back--right {
+    position: absolute;
+    max-width: 220px;
+    min-width: 150px;
+    top: 28%;
+    right: -30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section--second {
+    &__img--back {
+      width: 450px;
+    }
+
+    &__img--back--right {
+      width: 250px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .section--second {
+    &__img--back {
+      display: none;
+    }
+
+    &__img--back--right {
+      display: none;
+    }
+  }
+}
+
+.text--heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.box--card {
+  margin-top: 50px;
+}
+
+
+
 
 

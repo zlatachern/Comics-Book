@@ -12,11 +12,12 @@ import imageNine from '../../images/img_hero/img_9.png'
 import imageTen from '../../images/img_hero/img_10.png'
 import imageEleven from '../../images/img_hero/img_11.png'
 import SearchHero from '../SearchHero/SearchHero';
+import SearchComics from '../SearchComics/SearchComics';
 
 const Main = () => (
   <main className='main'>
-    <Container>
       <div className="section--first">
+        <Container>
         <div className="text-box__one mb-5 d-flex align-items-center justify-content-between">
           <h1 className="heading--h1">Comics</h1>
 
@@ -86,10 +87,35 @@ const Main = () => (
 
           <h1 className="heading--h1__two">Books</h1>
         </div>
+        </Container>
       </div>
 
-    <SearchHero/>
-    </Container>
+      <section className="section--second">
+        <Container>
+
+        <div className="text--heading">
+          <h3 className="heading--h3">Search your character!</h3>
+        </div>
+        <p className='text--subtitles'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
+
+        <div className="box--card">
+          <SearchHero/>
+        </div>
+        </Container>
+      </section>
+
+      <div className="section--third">
+        <Container>
+        <div className="text--heading">
+          <h3 className="heading--h3">Search your character!</h3>
+        </div>
+        <p className='text--subtitles'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
+
+        <SearchComics/>
+        </Container>
+      </div>
+    
+    
   </main>
   
 

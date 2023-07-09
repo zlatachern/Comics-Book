@@ -37,6 +37,7 @@
   text-decoration: underline;
   color: $color--primary;
   font-weight: 600;
+  font-family: 'ComicSans';
 }
 
 .card-side::after {
@@ -48,6 +49,7 @@
   text-decoration: none;
   color: $color--primary;
   font-weight: 600;
+  font-family: 'ComicSans';
 }
 
 .toggle {
@@ -117,6 +119,7 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  font-family: 'ComicSans';
 
   .toggle:checked ~ & {
     transform: rotateY(180deg);
