@@ -111,6 +111,7 @@ export default function BasicModal() {
                         name="email"
                         placeholder="Email"
                         type="email"
+                        required
                         onChange={handleInputChange}
                       ></input>
                       <input
@@ -118,6 +119,7 @@ export default function BasicModal() {
                         name="password"
                         placeholder="Password"
                         type="password"
+                        required
                         onChange={handleInputChange}
                       ></input>
                       <button className="flip-card__btn">Let`s go!</button>
@@ -132,6 +134,7 @@ export default function BasicModal() {
                         name="name"
                         placeholder="Name"
                         type="name"
+                        required
                         onChange={handleInputChange}
                       ></input>
                       <input
@@ -139,6 +142,7 @@ export default function BasicModal() {
                         name="email"
                         placeholder="Email"
                         type="email"
+                        required
                         onChange={handleInputChange}
                       ></input>
                       <input
@@ -146,6 +150,7 @@ export default function BasicModal() {
                         name="password"
                         placeholder="Password"
                         type="password"
+                        required
                         onChange={handleInputChange}
                       ></input>
                       <button className="flip-card__btn">Confirm!</button>

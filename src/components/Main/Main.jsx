@@ -133,12 +133,14 @@ const Main = () => (
 
       <section className="section--second">
         <Container>
-        <div className="box--comics__text">
-          <h3 className="heading--h3">New on Marvel Unlimited</h3>
-          <p className='text--paragraph mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vero sequi doloribus mollitia ducimus voluptates accusamus soluta inventore rem, debitis quod ipsum sunt ex laborum doloremque temporibus nemo exercitationem incidunt!</p>
-        </div>
+        <div className="section--second__content">
+          <div className="box--comics__text">
+            <h3 className="heading--h3">New on Marvel Unlimited</h3>
+            <p className='text--paragraph mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vero sequi doloribus mollitia ducimus voluptates accusamus soluta inventore rem, debitis quod ipsum sunt ex laborum doloremque temporibus nemo exercitationem incidunt!</p>
+          </div>
 
-        <Gallery/>
+          <Gallery/>
+        </div> 
         </Container>
       </section>
 
@@ -146,9 +148,9 @@ const Main = () => (
         <Container>
         <div className="section--third__content">
           <div className="text--heading">
-            <h3 className="heading--h3">Search your character!</h3>
+            <h3 className="heading--h3__white--color">Search your character!</h3>
           </div>
-          <p className='text--subtitles'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
+          <p className='text--subtitles__white--color'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
 
           <div className="box--card">
             <SearchHero/>

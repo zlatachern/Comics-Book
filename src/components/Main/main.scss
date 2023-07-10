@@ -7,7 +7,7 @@
 @media (max-width: 768px) {
   .main {
     position: relative;
-    top: 120px;
+    top: 90px;
   }
 }
 
@@ -268,19 +268,27 @@
 }
 
 .section--second {
-  margin-top: 80px;
+  margin-top: 0;
+  
+  &__content {
+    padding: 20px;
+    border-left: 2px solid $color--black;
+    border-right: 2px solid $color--black;
+  }
 
   .box--comics__text {
+    padding-top: 40px;
     text-align: center;
   }
 }
 
 .section--third {
   position: relative;
-  // background-image: url('../../images/img_main/back.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
+  background-image: url('../../images/img_main/back.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 40px;
 
   &__img--back {
     position: absolute;
@@ -326,11 +334,14 @@
 .text--heading {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
 }
 
 .box--card {
   margin-top: 50px;
+}
+
+.section--four {
+  padding-bottom: 40px;
 }
 
 

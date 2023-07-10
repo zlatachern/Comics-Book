@@ -51,7 +51,7 @@ const SearchHero = () => {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setOffset(0); // Сбросить смещение при изменении поискового запроса
+    setOffset(0); 
   };
 
   return (
@@ -77,7 +77,7 @@ const SearchHero = () => {
       <Grid container spacing={2} justifyContent="center">
         {characters.map((character) => {
           if (!character.thumbnail) {
-            return null; // Пропуск персонажа без картинки
+            return null; 
           }
 
           return (

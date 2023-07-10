@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Card, CardContent, CardMedia, Grid, TextField, Button } from '@mui/material';
+import React, { useEffect, useState, useRef } from 'react';
+import { Card, CardContent, CardMedia, Grid} from '@mui/material';
+import { Modal } from 'react-bootstrap';
 import imgOops from '../../images/img_main/oops.jpg';
 import './searchcomics.scss';
 
@@ -13,9 +14,10 @@ const SearchComics = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [comics, setComics] = useState([]);
   const [notFound, setNotFound] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [purchaseData, setPurchaseData] = useState({ firstName: '', lastName: '', address: '' });
-  const [setSelectedComic] = useState(null);
+  const [selectedComic, setSelectedComic] = useState(null);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,11 +61,13 @@ const SearchComics = () => {
 
   const handleModalOpen = (comic) => {
     setSelectedComic(comic);
-    setOpenModal(true);
+    setShowModal(true);
+    // Прокрутка к модальному окну
+    modalRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleModalClose = () => {
-    setOpenModal(false);
+    setShowModal(false);
   };
 
   const handlePurchaseDataChange = (event) => {
@@ -72,18 +76,26 @@ const SearchComics = () => {
   };
 
   const handlePurchaseSubmit = () => {
-    // Обработка отправки данных покупки
     console.log('Purchase Data:', purchaseData);
-    // Очистка формы
-    setPurchaseData({ firstName: '', lastName: '', address: '' });
-    // Закрытие модального окна
+
+    localStorage.setItem('purchaseData', JSON.stringify(purchaseData));
+
+    setPurchaseData({ firstName: '', lastName: '', cardNumber: '', expirationDate: '', cvv: '', address: '' });
+
     handleModalClose();
   };
 
   return (
     <div>
       <div className="container--input">
-        <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search by name" name="text" className="input--character" />
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          placeholder="Search by title"
+          name="text"
+          className="input--character"
+        />
       </div>
 
       {notFound && (
@@ -129,60 +141,126 @@ const SearchComics = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="contained" onClick={() => handleModalOpen(comic)}>
-                    Buy It!
-                  </Button>
+                  <button className="button--buy" onClick={() => handleModalOpen(comic)}>
+                    <span class="button--buy__text">Buy it!</span>
+                    <span class="button--buy__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg>
+                    </span>
+                  </button>
                 </CardContent>
               </Card>
             </Grid>
           );
         })}
       </Grid>
+
       {data?.data?.total > offset + COMICS_PER_PAGE && (
-        <div className="button--load-more">
+        <div className="button--load-more" ref={modalRef}>
           <button className="button--primary" onClick={handleLoadMore}>
             Load More
           </button>
         </div>
       )}
 
-      {openModal && (
-        <div className="modal"> {/* Добавьте стили для модального окна */}
-          <h2 className="modal__title">Purchase Form</h2>
-          <TextField
-            label="First Name"
+      <Modal show={showModal} onHide={handleModalClose} backdrop="static" className="modal--window">
+        <form className='form'>
+        <h3 className="heading--h3">Buy Comics</h3>
+        <div className="form-group" controlId="formFirstName">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="firstName"
+            placeholder="Enter first name"
             name="firstName"
+            required
             value={purchaseData.firstName}
             onChange={handlePurchaseDataChange}
-            fullWidth
-            margin="normal"
           />
-          <TextField
-            label="Last Name"
+        </div>
+
+        <div className="form-group" controlId="formLastName">
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="lastName"
+            placeholder="Enter last name"
             name="lastName"
+            required
             value={purchaseData.lastName}
             onChange={handlePurchaseDataChange}
-            fullWidth
-            margin="normal"
           />
-          <TextField
-            label="Address"
+        </div>
+
+        <div className="form-group" controlId="formCardNumber">
+          <label htmlFor="cardNumber">Card Number</label>
+          <input
+            type="text"
+            className="form-control"
+            id="cardNumber"
+            placeholder="Enter card number"
+            name="cardNumber"
+            required
+            pattern="[0-9]{13,16}"
+          />
+        </div>
+
+        <div className="form-group" controlId="formExpirationDate">
+          <label htmlFor="expirationDate">Expiration Date</label>
+          <input
+            type="text"
+            className="form-control"
+            id="expirationDate"
+            placeholder="MM/YY"
+            name="expirationDate"
+            required
+            pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+          />
+        </div>
+
+        <div className="form-group" controlId="formCVV">
+          <label htmlFor="cvv">CVV</label>
+          <input
+            type="text"
+            className="form-control"
+            id="cvv"
+            placeholder="Enter CVV"
+            name="cvv"
+            required
+            pattern="[0-9]{3,4}"
+          />
+        </div>
+
+        <div className="form-group" controlId="formAddress">
+          <label htmlFor="address">Address</label>
+          <textarea
+            className="form-control"
+            id="address"
+            placeholder="Enter address"
             name="address"
+            required
             value={purchaseData.address}
             onChange={handlePurchaseDataChange}
-            fullWidth
-            margin="normal"
           />
-          <Button variant="contained" onClick={handlePurchaseSubmit}>
-            Submit
-          </Button>
         </div>
-      )}
+
+        <div className="modal-footer">
+          <button type="button" className="button--primary" onClick={handleModalClose}>
+            Cancel
+          </button>
+          <button type="button" className="button--primary" onClick={handlePurchaseSubmit}>
+            Submit
+          </button>
+        </div>
+      </form>
+      </Modal>
     </div>
   );
 };
 
 export default SearchComics;
+
 
 
 
