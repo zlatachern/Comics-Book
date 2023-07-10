@@ -25,6 +25,12 @@
   }
 }
 
+@media (max-width: 540px) {
+  .text-box__two {
+    margin-top: 0;
+  }
+}
+
 .text--ligthing {
   z-index: 1;
   position: relative;
@@ -38,12 +44,9 @@
   top: -70px;
 }
 
-@media (max-width: 540px) {
-  .z {
-    width: 80px;
-    height: 80px;
-    top: 50px;
-    left: 70px;
+@media (max-width: 768px) {
+  .text--ligthing {
+    display: none;
   }
 }
 
@@ -170,13 +173,114 @@
   }
 }
 
+.addition--info {
+  background-color: $color--black;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+
+  &__one--text {
+    width: 300px;
+    position: relative;
+
+    .intro__icon {
+      width: 20px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+  }
+
+  &__one--image {
+    max-width: 300px;
+    border: 2px solid $color--primary;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__one--text {
+    margin-left: 20px;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .addition--info__content {
+    margin: 0 auto;
+    flex-direction: column-reverse;
+    gap: 20px;
+
+    .addition--info__one,
+    .addition--info__two {
+      gap: 40px;
+    }
+
+    .addition--info__one--text {
+      text-align: center;
+    }
+
+    .addition--info__two--image {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .addition--info__content {
+    margin: 0 auto;
+    flex-direction: column-reverse;
+
+    .addition--info__one {
+      flex-direction: column-reverse;
+      margin-top: 40px;
+    }
+
+    .addition--info__two {
+      padding-bottom: 50px;
+      border-bottom: 2px solid $color--white;
+    }
+
+    .addition--info__one,
+    .addition--info__two {
+      gap: 10px;
+    }
+
+    .addition--info__one--text {
+      text-align: center;
+    }
+
+    .addition--info__two--image {
+      max-width: 150px;
+    }
+  }
+}
+
+.addition--info__two {
+  &--image {
+    max-width: 150px;
+
+    img {
+      width: 100%;
+      border: 10px solid $color--primary;
+    }
+  }
+}
+
 .section--second {
-  margin-top: 90px;
+  margin-top: 80px;
+
+  .box--comics__text {
+    text-align: center;
+  }
+}
+
+.section--third {
   position: relative;
-  background-image: url('../../images/img_main/back.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  // background-image: url('../../images/img_main/back.png');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
 
   &__img--back {
     position: absolute;

@@ -15,7 +15,7 @@ const SearchComics = () => {
   const [notFound, setNotFound] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [purchaseData, setPurchaseData] = useState({ firstName: '', lastName: '', address: '' });
-  const [selectedComic, setSelectedComic] = useState(null);
+  const [setSelectedComic] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
