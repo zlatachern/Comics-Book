@@ -1,5 +1,6 @@
 import './main.scss';
 import Container from '../Container/Container';
+import Gallery from '../Gallery/Gallery';
 import imageOne from '../../images/img_hero/img_1.png'
 import imageTwo from '../../images/img_hero/img_2.png'
 import imageThree from '../../images/img_hero/img_3.png'
@@ -15,8 +16,7 @@ import SearchHero from '../SearchHero/SearchHero';
 import SearchComics from '../SearchComics/SearchComics';
 import marvelUnlimited from '../../images/img_main/marvel_unlimited-two.jpg'
 import hughJack from '../../images/img_main/hugh_jackman.png';
-import comicsEight from '../../images/img_comics/comics_8.jpg';
-import comicsNine from '../../images/img_comics/comics_9.jpg';
+
 
 const Main = () => (
   <main className='main'>
@@ -137,6 +137,8 @@ const Main = () => (
           <h3 className="heading--h3">New on Marvel Unlimited</h3>
           <p className='text--paragraph mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vero sequi doloribus mollitia ducimus voluptates accusamus soluta inventore rem, debitis quod ipsum sunt ex laborum doloremque temporibus nemo exercitationem incidunt!</p>
         </div>
+
+        <Gallery/>
         </Container>
       </section>
 
