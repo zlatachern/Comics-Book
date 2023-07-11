@@ -1,10 +1,18 @@
 import './switch.scss';
+import React, { useState } from 'react';
 
 const Switch = ({ handleButtonClick }) => {
+
+const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+    handleButtonClick();
+  };
  
   return (
     <label>
-      <input type="checkbox" className="slider" onChange={handleButtonClick}/>
+      <input type="checkbox" className="slider" onChange={handleCheckboxChange}/>
       <div className="switch">
         <div className="suns"></div>
         <div className="moons">

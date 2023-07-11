@@ -3,9 +3,9 @@ import Switch from '../Switch/Switch';
 import Container from '../Container/Container';
 import Burger from '../Burger/Burger';
 import List from '../List/List';
-import FormButton from '../FormButton/FormButton'
-import { ThemeContext } from '../../ThemeContext/ThemeContext'
+import FormButton from '../FormButton/FormButton';
 import React, { useContext } from 'react';
+import { ThemeContext } from '../../App';
 
 const Header = ({ children }) => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);

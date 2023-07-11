@@ -12,12 +12,12 @@ import imageEight from '../../images/img_hero/img_8.png'
 import imageNine from '../../images/img_hero/img_9.png'
 import imageTen from '../../images/img_hero/img_10.png'
 import imageEleven from '../../images/img_hero/img_11.png'
-import SearchHero from '../SearchHero/SearchHero';
 import SearchComics from '../SearchComics/SearchComics';
 import marvelUnlimited from '../../images/img_main/marvel_unlimited-two.jpg'
 import hughJack from '../../images/img_main/hugh_jackman.png';
 
-const Main = () => (
+const Main = () => {
+  return (
   <main className='main'>
       <div className="section--first">
         <Container>
@@ -162,15 +162,14 @@ const Main = () => (
         <Container>
         <div className="section--four__content">
           <div className="text--heading">
-            <h3 className="heading--h3">Search your character!</h3>
+            <h3 className="heading--h3">Search your comics!</h3>
           </div>
           <p className='text--subtitles'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
-
           <SearchComics/>
         </div>
         </Container>
       </div>
   </main>
 );
-
+}
 export default Main;
