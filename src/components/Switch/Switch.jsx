@@ -1,54 +1,57 @@
 import './switch.scss';
 
-const Switch = () => (
-  <label>
-    <input type="checkbox" class="slider"></input>
-    <div class="switch">
-        <div class="suns"></div>
-        <div class="moons">
-            <div class="star star-1"></div>
-            <div class="star star-2"></div>
-            <div class="star star-3"></div>
-            <div class="star star-4"></div>
-            <div class="star star-5"></div>
-            <div class="first-moon"></div>
+const Switch = ({ handleButtonClick }) => {
+ 
+  return (
+    <label>
+      <input type="checkbox" className="slider" onChange={handleButtonClick}/>
+      <div className="switch">
+        <div className="suns"></div>
+        <div className="moons">
+          <div className="star star-1"></div>
+          <div className="star star-2"></div>
+          <div className="star star-3"></div>
+          <div className="star star-4"></div>
+          <div className="star star-5"></div>
+          <div className="first-moon"></div>
         </div>
-        <div class="sand"></div>
-        <div class="bb8">
-            <div class="antennas">
-                <div class="antenna short"></div>
-                <div class="antenna long"></div>
+        <div className="sand"></div>
+        <div className="bb8">
+          <div className="antennas">
+            <div className="antenna short"></div>
+            <div className="antenna long"></div>
+          </div>
+          <div className="head">
+            <div className="stripe one"></div>
+            <div className="stripe two"></div>
+            <div className="eyes">
+              <div className="eye one"></div>
+              <div className="eye two"></div>
             </div>
-            <div class="head">
-                <div class="stripe one"></div>
-                <div class="stripe two"></div>
-                <div class="eyes">
-                    <div class="eye one"></div>
-                    <div class="eye two"></div>
-                </div>
-                <div class="stripe detail">
-                    <div class="detail zero"></div>
-                    <div class="detail zero"></div>
-                    <div class="detail one"></div>
-                    <div class="detail two"></div>
-                    <div class="detail three"></div>
-                    <div class="detail four"></div>
-                    <div class="detail five"></div>
-                    <div class="detail five"></div>
-                </div>
-                <div class="stripe three"></div>
+            <div className="stripe detail">
+              <div className="detail zero"></div>
+              <div className="detail zero"></div>
+              <div className="detail one"></div>
+              <div className="detail two"></div>
+              <div className="detail three"></div>
+              <div className="detail four"></div>
+              <div className="detail five"></div>
+              <div className="detail five"></div>
             </div>
-            <div class="ball">
-                <div class="lines one"></div>
-                <div class="lines two"></div>
-                <div class="ring one"></div>
-                <div class="ring two"></div>
-                <div class="ring three"></div>
-            </div>
-            <div class="shadow"></div>
+            <div className="stripe three"></div>
+          </div>
+          <div className="ball">
+            <div className="lines one"></div>
+            <div className="lines two"></div>
+            <div className="ring one"></div>
+            <div className="ring two"></div>
+            <div className="ring three"></div>
+          </div>
+          <div className="shadow"></div>
         </div>
-    </div>
-</label>
-)
+      </div>
+    </label>
+  );
+};
 
 export default Switch;

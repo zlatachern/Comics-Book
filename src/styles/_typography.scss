@@ -100,9 +100,10 @@
 .heading--h3 {
   @include textStyles('ComicScript', 35px, 600, $color--black);
   margin: 0 auto;
+  padding-top: 50px;
 
   &__white--color {
-    padding-top: 60px;
+    padding-top: 90px;
     @include textStyles('ComicScript', 35px, 600, $color--white);
   }
 }
@@ -165,4 +166,8 @@
 .modal--body,
 .form-group {
   @include textStyles('ComicSans', 15px, 400, $color--white);
+}
+
+.footer__form {
+  @include textStyles('ComicSans', 17px, 400, $color--black);
 }

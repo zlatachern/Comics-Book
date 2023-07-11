@@ -27,7 +27,7 @@ const SearchComics = () => {
         );
         const jsonData = await response.json();
         setData(jsonData);
-        console.log(jsonData); // Вывод данных в консоль
+        console.log(jsonData);
         const results = jsonData?.data?.results;
         if (searchTerm === '') {
           setComics(results?.slice(0, INITIAL_COMICS) || []);
@@ -120,9 +120,9 @@ const SearchComics = () => {
 
           return (
             <Grid item xs={12} sm={6} md={4} key={comic.id}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+              <Card className='card--border' sx={{ height: '100%', display: 'flex', flexDirection: 'column', }}>
                 {comic.thumbnail.path && comic.thumbnail.extension && (
-                  <CardMedia
+                  <CardMedia className='card--image'
                     component="img"
                     src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                     alt={comic.title}
@@ -130,7 +130,7 @@ const SearchComics = () => {
                 )}
                 <CardContent sx={{ flexGrow: 1 }}>
                   <h4 className="heading--h4">{comic.title}</h4>
-                  <p className="text--paragraph">{comic.description}</p>
+                  {/* <p className="text--paragraph">{comic.description}</p> */}
                   <p className="text--paragraph">Characters:</p>
                   <ul>
                     {comic.characters.items.slice(0, 2).map((character) => (

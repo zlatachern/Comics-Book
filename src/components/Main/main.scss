@@ -269,7 +269,7 @@
 
 .section--second {
   margin-top: 0;
-  
+  border-bottom: 2px solid $color--black;
   &__content {
     padding: 20px;
     border-left: 2px solid $color--black;
@@ -342,6 +342,12 @@
 
 .section--four {
   padding-bottom: 40px;
+
+  &__content {
+    padding: 20px;
+    border-left: 2px solid $color--black;
+    border-right: 2px solid $color--black;
+  }
 }
 
 

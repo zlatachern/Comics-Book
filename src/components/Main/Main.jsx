@@ -17,7 +17,6 @@ import SearchComics from '../SearchComics/SearchComics';
 import marvelUnlimited from '../../images/img_main/marvel_unlimited-two.jpg'
 import hughJack from '../../images/img_main/hugh_jackman.png';
 
-
 const Main = () => (
   <main className='main'>
       <div className="section--first">
@@ -144,7 +143,7 @@ const Main = () => (
         </Container>
       </section>
 
-      <section className="section--third">
+      {/* <section className="section--third">
         <Container>
         <div className="section--third__content">
           <div className="text--heading">
@@ -157,23 +156,21 @@ const Main = () => (
           </div>
         </div>
         </Container>
-      </section>
+      </section> */}
 
       <div className="section--four">
         <Container>
-        <div className="text--heading">
-          <h3 className="heading--h3">Search your character!</h3>
-        </div>
-        <p className='text--subtitles'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
+        <div className="section--four__content">
+          <div className="text--heading">
+            <h3 className="heading--h3">Search your character!</h3>
+          </div>
+          <p className='text--subtitles'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
 
-        <SearchComics/>
+          <SearchComics/>
+        </div>
         </Container>
       </div>
-    
-    
   </main>
-  
-
 );
 
 export default Main;
