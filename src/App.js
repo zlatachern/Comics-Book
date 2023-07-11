@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Home from './pages/Home';
 import Characters from './pages/Characters';
 import ErrorPage from './pages/NotFound';
@@ -13,9 +13,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/',
+    path: '/characters',
     element: <Characters />,
-    errorElement: <ErrorPage />,
   },
 ]);
 
@@ -25,13 +24,13 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
       <RouterProvider router={router}>
-        <Home />
-        <Characters />
+        <Outlet />
       </RouterProvider>
     </ThemeContext.Provider>
   );
 };
 
 export default App;
+
 
 

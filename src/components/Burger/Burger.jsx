@@ -44,8 +44,8 @@ class Burger extends React.Component {
       <Menu isOpen={isMenuOpen} onStateChange={state => this.setState({ isMenuOpen: state.isOpen })}>
         <nav className='nav'>
           <ul className='nav__list--burger'>
-            <li className='nav__item'><a className='nav__link' href="ht">Home</a></li>
-            <li className='nav__item'><a className='nav__link' href="ht">Characters</a></li>
+            <li className='nav__item'><a className='nav__link' href="/">Home</a></li>
+            <li className='nav__item'><a className='nav__link' href="/characters">Characters</a></li>
             <li className='nav__item'><a className='nav__link' href="ht">Games</a></li>
             {shouldShowMenu && window.innerWidth <= 540 && <FormButton/>}
           </ul>
