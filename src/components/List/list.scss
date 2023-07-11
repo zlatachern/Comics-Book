@@ -37,7 +37,6 @@
 
 @media (max-width: 768px) {
   .nav__list {
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
 }

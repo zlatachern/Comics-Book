@@ -1,7 +1,8 @@
 import { bubble as Menu } from 'react-burger-menu';
 import React from 'react';
 import './burger.scss';
-import Button from '../Button/Button';
+
+import FormButton from '../FormButton/FormButton';
 
 class Burger extends React.Component {
   constructor(props) {
@@ -42,11 +43,11 @@ class Burger extends React.Component {
     return (
       <Menu isOpen={isMenuOpen} onStateChange={state => this.setState({ isMenuOpen: state.isOpen })}>
         <nav className='nav'>
-          <ul className='nav__list'>
+          <ul className='nav__list--burger'>
             <li className='nav__item'><a className='nav__link' href="ht">Home</a></li>
-            <li className='nav__item'><a className='nav__link' href="ht">Account</a></li>
+            <li className='nav__item'><a className='nav__link' href="ht">Characters</a></li>
             <li className='nav__item'><a className='nav__link' href="ht">Games</a></li>
-            {shouldShowMenu && window.innerWidth <= 540 && <Button title={'Sing In'} />}
+            {shouldShowMenu && window.innerWidth <= 540 && <FormButton/>}
           </ul>
         </nav>
       </Menu>

@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+
+.container--input {
+  display: flex;
+  justify-content: center;
+}
+
+.input--character {
+  width: 160px;
+  padding: 10px 0px 10px 40px;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+  --input-focus: #2d8cf0;
+  --font-color: #fefefe;
+  --font-color-sub: #7e7e7e;
+  --bg-color: #111111;
+  --main-color: #fefefe;
+  border-radius: 5px;
+  border: 2px solid $color--primary;
+  background-color: $color--white;
+  box-shadow: 4px 4px $color--primary;
+  font-size: 15px;
+  font-weight: 600;
+  color: $color--black;
+  padding: 5px 10px;
+  outline: none;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  &::placeholder {
+    color: var(--font-color-sub);
+  }
+
+  &:focus {
+    border: 2px solid #ff7f00;
+    opacity: 1;
+    width: 250px;
+  }
+}
+
+.button--load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+
+
+

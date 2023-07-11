@@ -1,0 +1,7 @@
+@mixin textStyles($fFamily, $fSize, $fWeight, $color, $wSpacing: null,) {
+  font-family: $fFamily;
+  font-size: $fSize;
+  font-weight: $fWeight;
+  color: $color;
+  word-spacing: $wSpacing;
+}
