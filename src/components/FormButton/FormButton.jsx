@@ -65,7 +65,7 @@ export default function BasicModal() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Сохранение данных в localStorage
+    
     localStorage.setItem('name', formData.name);
     setUserName(formData.name);
   };

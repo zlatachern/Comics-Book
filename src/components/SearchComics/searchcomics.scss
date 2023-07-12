@@ -10,44 +10,48 @@
   border-radius: 50px;
   border: 1px solid $color--primary;
   background-color: $color--primary;
+
+  &, &__icon, &__text {
+    transition: all 0.3s;
+  }
+
+  &__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 39px;
+    width: 40px;
+    background-color: $color--primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+  }
 }
 
-.button--buy, .button--buy__icon, .button--buy__text {
-  transition: all 0.3s;
-}
-
-.button--buy .button--buy__text {
-  transform: translateX(30px);
-  color: #fff;
-  font-weight: 600;
-}
-
-.button--buy .button--buy__icon {
-  position: absolute;
-  transform: translateX(109px);
-  height: 39px;
-  width: 40px;
-  background-color: $color--primary;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-}
-
-.button--buy .svg {
-  border-radius: 50px;
-  width: 30px;
-  stroke: #fff;
-}
-
-.button--buy:hover .button--buy__text {
-  color: transparent;
-}
-
-.button--buy:hover .button--buy__icon {
-  width: 148px;
-  transform: translateX(0);
-}
+.button--buy {
+      .svg {
+      border-radius: 50px;
+      width: 30px;
+      stroke: #fff;
+      }
+    
+      &:hover {
+      .button--buy__text {
+      color: transparent;
+      }
+    
+      .button--buy__icon {
+        width: 148px;
+        transform: translateX(0);
+      }
+    }
+  }
 
 .modal--window {
   background-image: url('../../images/img_main/modal_back.jpg');

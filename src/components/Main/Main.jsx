@@ -40,17 +40,17 @@ const Main = () => {
             <div className="box--photos__one d-flex align-items-center justify-content-between mb-4">
 
               <div className="box--photos__one__size">
-                <img src={imageOne} alt="" />
+                <img src={imageOne} alt="Hero_1" />
               </div>
               <div className="box--photos__one__size--small">
-                <img src={imageTwo} alt="" />
+                <img src={imageTwo} alt="Hero_2" />
               </div>
               <div className="box--photos__one__size">
-                <img src={imageThree} alt="" />
+                <img src={imageThree} alt="Hero_3" />
               </div>
 
               <div className="box--photos__one__size--small">
-                <img src={imageFour} alt="" />
+                <img src={imageFour} alt="Hero_4" />
               </div>
 
             </div>
@@ -58,13 +58,13 @@ const Main = () => {
             <div className="box--photos__two d-flex align-items-center justify-content-between mb-4">
 
               <div className="box--photos__one__size">
-                <img src={imageFive} alt="" />
+                <img src={imageFive} alt="Hero_5" />
               </div>
               <div className="box--photos__one__size--small">
-                <img src={imageSix} alt="" />
+                <img src={imageSix} alt="Hero_6" />
               </div>
               <div className="box--photos__one__size">
-                <img src={imageSeven} alt="" />
+                <img src={imageSeven} alt="Hero_7" />
               </div>
 
             </div>
@@ -72,16 +72,16 @@ const Main = () => {
             <div className="box--photos__one d-flex align-items-center justify-content-between">
 
               <div className="box--photos__one__size">
-                <img src={imageEight} alt="" />
+                <img src={imageEight} alt="Hero_8" />
               </div>
               <div className="box--photos__one__size--small">
-                <img src={imageNine} alt="" />
+                <img src={imageNine} alt="Hero_9" />
               </div>
               <div className="box--photos__one__size">
-                <img src={imageTen} alt="" />
+                <img src={imageTen} alt="Hero_10" />
               </div>
               <div className="box--photos__one__size--small">
-                <img src={imageEleven} alt="" />
+                <img src={imageEleven} alt="Hero_11" />
               </div>
 
             </div>
@@ -109,7 +109,7 @@ const Main = () => {
 
           <div className="addition--info__two d-flex align-items-center">
           <div className="addition--info__two--image">
-              <img src={hughJack} alt="Marvel Unlimited" />
+              <img src={hughJack} alt="Hugh Jackman" />
             </div>
 
             <div className="addition--info__one--text">
@@ -143,21 +143,6 @@ const Main = () => {
         </Container>
       </section>
 
-      {/* <section className="section--third">
-        <Container>
-        <div className="section--third__content">
-          <div className="text--heading">
-            <h3 className="heading--h3__white--color">Search your character!</h3>
-          </div>
-          <p className='text--subtitles__white--color'>Discover the vast Marvel Universe and find information about your favorite characters. From iconic heroes to notorious villains, unleash your curiosity and embark on an adventure through Marvel's rich tapestry of storytelling. Enter the name of your desired character into the search bar above and let the journey begin!</p>
-
-          <div className="box--card">
-            <SearchHero/>
-          </div>
-        </div>
-        </Container>
-      </section> */}
-
       <div className="section--four">
         <Container>
         <div className="section--four__content">
@@ -172,4 +157,5 @@ const Main = () => {
   </main>
 );
 }
+
 export default Main;

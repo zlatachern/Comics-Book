@@ -5,7 +5,6 @@ import { ThemeContext } from '../App';
 const Home = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
-  // Применить стили для темной темы
   const darkThemeStyle = {
     backgroundColor: '#000',
     color: '#fff',

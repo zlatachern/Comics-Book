@@ -22,10 +22,10 @@ const SearchHero = () => {
         );
         const jsonData = await response.json();
         setData(jsonData);
-        console.log(jsonData); // Вывод данных в консоль
+        console.log(jsonData); 
         const results = jsonData?.data?.results;
         if (searchTerm === '') {
-          setCharacters(results?.slice(0, INITIAL_CHARACTERS) || []); // Отображение изначальных 3 персонажей
+          setCharacters(results?.slice(0, INITIAL_CHARACTERS) || []); 
         } else {
           const filteredCharacters = results?.filter((character) =>
             character.name.toLowerCase().includes(searchTerm.toLowerCase())
