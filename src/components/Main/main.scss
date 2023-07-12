@@ -178,6 +178,8 @@
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   &__one--text {
     width: 300px;
@@ -282,31 +284,6 @@
   }
 }
 
-.section--third {
-  position: relative;
-  background-image: url('../../images/img_main/back.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-bottom: 40px;
-
-  &__img--back {
-    position: absolute;
-    max-width: 450px;
-    min-width: 250px;
-    top: 28%;
-    left: -60px;
-  }
-
-  &__img--back--right {
-    position: absolute;
-    max-width: 220px;
-    min-width: 150px;
-    top: 28%;
-    right: -30px;
-  }
-}
-
 @media (max-width: 1200px) {
   .section--second {
     &__img--back {
@@ -329,15 +306,6 @@
       display: none;
     }
   }
-}
-
-.text--heading {
-  display: flex;
-  justify-content: center;
-}
-
-.box--card {
-  margin-top: 50px;
 }
 
 .section--four {

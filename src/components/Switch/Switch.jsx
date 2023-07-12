@@ -1,18 +1,22 @@
 import './switch.scss';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../App';
 
-const Switch = ({ handleButtonClick }) => {
-
-const [isChecked, setIsChecked] = useState(false);
+const Switch = () => {
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-    handleButtonClick();
+    toggleTheme();
   };
- 
+
   return (
     <label>
-      <input type="checkbox" className="slider" onChange={handleCheckboxChange}/>
+      <input
+        type="checkbox"
+        className="slider"
+        checked={isDarkMode}
+        onChange={handleCheckboxChange}
+      />
       <div className="switch">
         <div className="suns"></div>
         <div className="moons">

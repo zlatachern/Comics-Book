@@ -45,6 +45,45 @@
   margin-top: 30px;
 }
 
+.section--third {
+  position: relative;
+  background-image: url('../../images/img_main/back.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 40px;
+
+  &__img--back {
+    position: absolute;
+    max-width: 450px;
+    min-width: 250px;
+    top: 28%;
+    left: -60px;
+  }
+
+  &__img--back--right {
+    position: absolute;
+    max-width: 220px;
+    min-width: 150px;
+    top: 28%;
+    right: -30px;
+  }
+}
+
+.text--heading {
+  display: flex;
+  justify-content: center;
+}
+
+.box--card {
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .section--third {
+    padding-top: 150px;
+  }
+}
 
 
 

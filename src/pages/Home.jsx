@@ -3,15 +3,20 @@ import MainLayout from '../Layout/mainlayout';
 import { ThemeContext } from '../App';
 
 const Home = () => {
-  const theme = useContext(ThemeContext);
+  const { isDarkMode } = useContext(ThemeContext);
 
-  console.log('theme :>> ', theme);
+  // Применить стили для темной темы
+  const darkThemeStyle = {
+    backgroundColor: '#000',
+    color: '#fff',
+  };
 
   return (
     <>
-      <MainLayout />
+      <MainLayout style={isDarkMode ? darkThemeStyle : null} />
     </>
   );
 };
 
 export default Home;
+

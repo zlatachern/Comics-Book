@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Characters from './pages/Characters';
 import ErrorPage from './pages/NotFound';
 
-export const ThemeContext = createContext('light');
+export const ThemeContext = createContext();
 
 const router = createBrowserRouter([
   {
@@ -21,8 +21,12 @@ const router = createBrowserRouter([
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const toggleTheme = () => {
+    setIsDarkMode((prevIsDarkMode) => !prevIsDarkMode);
+  };
+
   return (
-    <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
       <RouterProvider router={router}>
         <Outlet />
       </RouterProvider>

@@ -46,7 +46,6 @@ class Burger extends React.Component {
           <ul className='nav__list--burger'>
             <li className='nav__item'><a className='nav__link' href="/">Home</a></li>
             <li className='nav__item'><a className='nav__link' href="/characters">Characters</a></li>
-            <li className='nav__item'><a className='nav__link' href="ht">Games</a></li>
             {shouldShowMenu && window.innerWidth <= 540 && <FormButton/>}
           </ul>
         </nav>

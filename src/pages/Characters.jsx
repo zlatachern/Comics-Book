@@ -6,7 +6,6 @@ import Footer from '../components/Footer/Footer';
 const Characters = () => (
   <>
     <Header/>
-    
     <section className="section--third">
       <Container>
         <div className="section--third__content">

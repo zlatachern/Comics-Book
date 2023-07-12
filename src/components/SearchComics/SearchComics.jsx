@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Card, CardContent, CardMedia, Grid} from '@mui/material';
+import { Card, CardContent, CardMedia, Grid } from '@mui/material';
 import { Modal } from 'react-bootstrap';
 import imgOops from '../../images/img_main/oops.jpg';
 import './searchcomics.scss';
@@ -15,7 +15,11 @@ const SearchComics = () => {
   const [comics, setComics] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [purchaseData, setPurchaseData] = useState({ firstName: '', lastName: '', address: '' });
+  const [purchaseData, setPurchaseData] = useState({
+    firstName: '',
+    lastName: '',
+    address: '',
+  });
   const [selectedComic, setSelectedComic] = useState(null);
   const modalRef = useRef(null);
 
@@ -120,9 +124,10 @@ const SearchComics = () => {
 
           return (
             <Grid item xs={12} sm={6} md={4} key={comic.id}>
-              <Card className='card--border' sx={{ height: '100%', display: 'flex', flexDirection: 'column', }}>
+              <Card className="card--border" sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 {comic.thumbnail.path && comic.thumbnail.extension && (
-                  <CardMedia className='card--image'
+                  <CardMedia
+                    className="card--image"
                     component="img"
                     src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                     alt={comic.title}
@@ -130,21 +135,38 @@ const SearchComics = () => {
                 )}
                 <CardContent sx={{ flexGrow: 1 }}>
                   <h4 className="heading--h4">{comic.title}</h4>
-                  {/* <p className="text--paragraph">{comic.description}</p> */}
                   <p className="text--paragraph">Characters:</p>
-                  <ul>
-                    {comic.characters.items.slice(0, 2).map((character) => (
-                      <li key={character.resourceURI}>
-                        <p className="text--paragraph" href={character.resourceURI}>
-                          {character.name}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
+                  {comic.characters && comic.characters.items && comic.characters.items.length > 0 ? (
+                    <ul>
+                      {comic.characters.items.slice(0, 2).map((character) => (
+                        <li key={character.resourceURI}>
+                          <p className="text--paragraph" href={character.resourceURI}>
+                            {character.name}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text--paragraph">Oops, we don't have info about it. Update soon!</p>
+                  )}
                   <button className="button--buy" onClick={() => handleModalOpen(comic)}>
-                    <span class="button--buy__text">Buy it!</span>
-                    <span class="button--buy__icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg>
+                    <span className="button--buy__text">Buy it!</span>
+                    <span className="button--buy__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        height="24"
+                        fill="none"
+                        className="svg"
+                      >
+                        <line y2="19" y1="5" x2="12" x1="12" />
+                        <line y2="12" y1="12" x2="19" x1="5" />
+                      </svg>
                     </span>
                   </button>
                 </CardContent>
@@ -163,97 +185,97 @@ const SearchComics = () => {
       )}
 
       <Modal show={showModal} onHide={handleModalClose} backdrop="static" className="modal--window">
-        <form className='form'>
-        <h3 className="heading--h3">Buy Comics</h3>
-        <div className="form-group" controlId="formFirstName">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="firstName"
-            placeholder="Enter first name"
-            name="firstName"
-            required
-            value={purchaseData.firstName}
-            onChange={handlePurchaseDataChange}
-          />
-        </div>
+        <form className="form">
+          <h3 className="heading--h3">Buy Comics</h3>
+          <div className="form-group" controlId="formFirstName">
+            <label htmlFor="firstName">First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="firstName"
+              placeholder="Enter first name"
+              name="firstName"
+              required
+              value={purchaseData.firstName}
+              onChange={handlePurchaseDataChange}
+            />
+          </div>
 
-        <div className="form-group" controlId="formLastName">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="lastName"
-            placeholder="Enter last name"
-            name="lastName"
-            required
-            value={purchaseData.lastName}
-            onChange={handlePurchaseDataChange}
-          />
-        </div>
+          <div className="form-group" controlId="formLastName">
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="lastName"
+              placeholder="Enter last name"
+              name="lastName"
+              required
+              value={purchaseData.lastName}
+              onChange={handlePurchaseDataChange}
+            />
+          </div>
 
-        <div className="form-group" controlId="formCardNumber">
-          <label htmlFor="cardNumber">Card Number</label>
-          <input
-            type="text"
-            className="form-control"
-            id="cardNumber"
-            placeholder="Enter card number"
-            name="cardNumber"
-            required
-            pattern="[0-9]{13,16}"
-          />
-        </div>
+          <div className="form-group" controlId="formCardNumber">
+            <label htmlFor="cardNumber">Card Number</label>
+            <input
+              type="text"
+              className="form-control"
+              id="cardNumber"
+              placeholder="Enter card number"
+              name="cardNumber"
+              required
+              pattern="[0-9]{13,16}"
+            />
+          </div>
 
-        <div className="form-group" controlId="formExpirationDate">
-          <label htmlFor="expirationDate">Expiration Date</label>
-          <input
-            type="text"
-            className="form-control"
-            id="expirationDate"
-            placeholder="MM/YY"
-            name="expirationDate"
-            required
-            pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
-          />
-        </div>
+          <div className="form-group" controlId="formExpirationDate">
+            <label htmlFor="expirationDate">Expiration Date</label>
+            <input
+              type="text"
+              className="form-control"
+              id="expirationDate"
+              placeholder="MM/YY"
+              name="expirationDate"
+              required
+              pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+            />
+          </div>
 
-        <div className="form-group" controlId="formCVV">
-          <label htmlFor="cvv">CVV</label>
-          <input
-            type="text"
-            className="form-control"
-            id="cvv"
-            placeholder="Enter CVV"
-            name="cvv"
-            required
-            pattern="[0-9]{3,4}"
-          />
-        </div>
+          <div className="form-group" controlId="formCVV">
+            <label htmlFor="cvv">CVV</label>
+            <input
+              type="text"
+              className="form-control"
+              id="cvv"
+              placeholder="Enter CVV"
+              name="cvv"
+              required
+              pattern="[0-9]{3,4}"
+            />
+          </div>
 
-        <div className="form-group" controlId="formAddress">
-          <label htmlFor="address">Address</label>
-          <textarea
-            className="form-control"
-            id="address"
-            placeholder="Enter address"
-            name="address"
-            required
-            value={purchaseData.address}
-            onChange={handlePurchaseDataChange}
-          />
-        </div>
+          <div className="form-group" controlId="formAddress">
+            <label htmlFor="address">Address</label>
+            <textarea
+              className="form-control"
+              id="address"
+              placeholder="Enter address"
+              name="address"
+              required
+              value={purchaseData.address}
+              onChange={handlePurchaseDataChange}
+            />
+          </div>
 
-        <div className="modal-footer">
-          <button type="button" className="button--primary" onClick={handleModalClose}>
-            Cancel
-          </button>
-          <button type="button" className="button--primary" onClick={handlePurchaseSubmit}>
-            Submit
-          </button>
-        </div>
-      </form>
+          <div className="modal-footer">
+            <button type="button" className="button--primary" onClick={handleModalClose}>
+              Cancel
+            </button>
+            <button type="button" className="button--primary" onClick={handlePurchaseSubmit}>
+              Submit
+            </button>
+          </div>
+        </form>
       </Modal>
     </div>
   );

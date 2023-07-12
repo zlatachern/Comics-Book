@@ -3,6 +3,7 @@
 .footer {
   background-color: $color--black;
   padding-bottom: 30px;
+  margin-top: -40px;
 
   &__content {
     justify-content: space-evenly;
@@ -26,9 +27,55 @@
 
   &__text {
     max-width: 400px;
+
+    .heading--h3__white--color {
+      text-align: center;
+    }
+
+    .footer__text--paragraph {
+      text-align: center;
+    }
   }
 
   .mg-top {
     padding-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__content {
+      flex-direction: column-reverse;
+      padding-top: 130px;
+
+      .footer__text {
+        max-width: 100%;
+      }
+
+      .form__comment {
+        .heading--h3__white--color {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.box--social {
+  gap: 20px;
+  justify-content: center;
+
+  &__svg {
+    width: 40px;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .box--social {
+    justify-content: center;
   }
 }
